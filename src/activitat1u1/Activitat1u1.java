@@ -6,7 +6,13 @@ import java.net.SocketException;
 import java.util.Enumeration;
 
 public class Activitat1u1 {
-
+    /**
+     * Aquest metode captura totes les interficies de les quals disposem al nostre equip.
+     * En cas de contenir alguna direccio les nostres interficies les mostraria, en cas contrari
+     * Continua amb la seguent interficie. 
+     * Quan acaba para.
+     * @param args 
+     */
     public static void main(String[] args) {
         try {
             //Declarem un atribut per anar capturant les interficies.
