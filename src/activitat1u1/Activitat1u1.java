@@ -9,13 +9,12 @@ public class Activitat1u1 {
     /**
      * Aquest metode captura totes les interficies de les quals disposem al nostre equip.
      * En cas de contenir alguna direccio les nostres interficies les mostraria, en cas contrari
-     * Continua amb la seguent interficie. 
-     * Quan acaba para.
+     * Continua amb la seguent interficie.
      * @param args 
      */
     public static void main(String[] args) {
         try {
-            //Declarem un atribut per anar capturant les interficies.
+            //Declarem una llista per anar capturant les interficies.
             Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
             //Mentres tinguem interficies entrem al bucle.
             while (interfaces.hasMoreElements()) {
@@ -23,7 +22,7 @@ public class Activitat1u1 {
                 NetworkInterface interfaz = interfaces.nextElement();
                 //La mostrem.
                 System.out.println(interfaz.getDisplayName());
-                //Creem un atribut per capturar les diferents direccions.
+                //Creem una llista per capturar les diferents direccions.
                 Enumeration<InetAddress> address = interfaz.getInetAddresses();
                 //Mentres hi hagin mes adresses entrem al bucle.
                 while (address.hasMoreElements()) {
