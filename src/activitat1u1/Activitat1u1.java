@@ -9,14 +9,21 @@ public class Activitat1u1 {
 
     public static void main(String[] args) {
         try {
+            //Declarem un atribut per anar capturant les interficies.
             Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-            System.out.println("------------------");
+            //Mentres tinguem interficies entrem al bucle.
             while (interfaces.hasMoreElements()) {
+                //Capturem la interficie actual.
                 NetworkInterface interfaz = interfaces.nextElement();
-                System.out.println("Interfaz: " + interfaz.getDisplayName());
-                Enumeration<InetAddress> direccion = interfaz.getInetAddresses();
-                while (direccion.hasMoreElements()) {
-                    InetAddress ip = direccion.nextElement();
+                //La mostrem.
+                System.out.println(interfaz.getDisplayName());
+                //Creem un atribut per capturar les diferents direccions.
+                Enumeration<InetAddress> address = interfaz.getInetAddresses();
+                //Mentres hi hagin mes adresses entrem al bucle.
+                while (address.hasMoreElements()) {
+                    //Capturem la adresa actual.
+                    InetAddress ip = address.nextElement();
+                    //Mostrem la direcio.
                     System.out.println(ip.getHostAddress());
                 }
                 System.out.println("------------------");
